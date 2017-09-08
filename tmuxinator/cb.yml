@@ -1,0 +1,14 @@
+# ~/.tmuxinator/cb.yml
+
+name: cb
+root: ~/cmm-apps/criteria
+
+windows:
+  - editor:
+      layout: 4149,204x46,0,0{117x46,0,0,0,86x46,118,0,1}
+      panes:
+        - vim
+        -
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
+  - webpack: bin/webpack-dev-server

@@ -1,0 +1,11 @@
+# ~/.tmuxinator/def.yml
+
+name: def
+root: .
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        -
