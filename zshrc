@@ -4,6 +4,9 @@ source ~/.custom_dotfiles/.zshrc
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Auto update ohmyzsh
+DISABLE_UPDATE_PROMPT=true
+
 # set editor to vim
 export EDITOR='vim'
 
@@ -34,4 +37,4 @@ alias be="bundle exec"
 alias migrate="bin/rake db:migrate"
 alias migrate:reset="bin/rake db:migrate:reset"
 alias seed="bin/rake db:seed"
-alias krs1="git status --porcelain | cut -c4- | grep '\.rb' | xargs rubocop"
+alias krs1="git status --porcelain | cut -c4- | grep '\.rb' | xargs bundle exec rubocop"
