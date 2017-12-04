@@ -34,6 +34,8 @@ set tabstop=2 shiftwidth=2 expandtab
 set relativenumber
 set number
 let g:NERDTreeShowLineNumbers=1
+set foldmethod=indent
+set foldlevel=99
 
 " Syntax/colorscheme
 syntax enable
