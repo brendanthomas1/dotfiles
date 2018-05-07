@@ -1,7 +1,7 @@
 # ~/.tmuxinator/cb.yml
 
 name: cb
-root: ~/cmm-apps/criteria
+root: ~/vagrant/code/criteria
 
 windows:
   - editor:

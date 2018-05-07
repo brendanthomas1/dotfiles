@@ -34,6 +34,7 @@ source ~/.bin/tmuxinator.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias be="bundle exec"
+alias dj="python manage.py" # for Django commands
 alias migrate="bin/rake db:migrate"
 alias migrate:reset="bin/rake db:migrate:reset"
 alias seed="bin/rake db:seed"
