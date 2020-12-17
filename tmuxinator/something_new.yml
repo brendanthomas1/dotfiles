@@ -1,0 +1,13 @@
+# ~/.tmuxinator/rails.yml
+
+name: something_new
+root: .
+
+windows:
+  - editor:
+      layout: fe55,204x51,0,0[204x35,0,0,0,204x15,0,36,2]
+      panes:
+        - vim
+        -
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log

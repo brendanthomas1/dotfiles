@@ -1,6 +1,7 @@
 " load customization
 source ~/.custom_dotfiles/.vimrc
 
+" set nocompatible
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -10,9 +11,13 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" fzf is new and improved ctrlp?
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
 
 Plugin 'tpope/vim-rails'
 Plugin 'elixir-lang/vim-elixir'
@@ -21,6 +26,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'posva/vim-vue'
+Plugin 'ngmy/vim-rubocop'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,8 +46,8 @@ set foldlevel=99
 
 " Syntax/colorscheme
 syntax enable
-set background=dark
-colorscheme dracula
+" set background=dark
+" colorscheme dracula
 
 " Shortcuts
 filetype plugin indent on
@@ -50,6 +56,7 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
 inoremap jk <esc>
+cnoremap fzf FZF
 
 " Start NERDTree on vim
 autocmd vimenter * NERDTree
@@ -61,7 +68,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "   autocmd BufEnter * highlight OverLength ctermbg=59 ctermfg=30
 "   autocmd BufEnter * match OverLength /\%81v.\+/
 " augroup END
-set textwidth=80
+set textwidth=100
 set colorcolumn=+1
 hi ColorColumn ctermbg=59
 
@@ -80,3 +87,9 @@ let g:ctrlp_custom_ignore = {
 
 " Use vim-jsx in .js files too
 let g:jsx_ext_required = 0
+
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+" fzf :Ag command - don't include file names
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
